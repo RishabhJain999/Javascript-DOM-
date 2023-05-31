@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  color: orange;
+  background-color: blanchedalmond;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+.container {
+  width: 450px;
+  height: 500px;
+  background-color: darkblue;
+  padding: 20px;
+  display: flex;
+}
+
+.password-progress {
+  width: 20px;
+  height: 100%;
+  background-color: white;
+  margin-right: 20px;
+  position: relative;
+}
+
+.password-progress::after {
+  position: absolute;
+  content: '';
+  height: calc(1% * var(--strength, 0));
+  background-color: #127681;
+  width: 100%;
+  bottom: 0;
+}
+
+.password {
+  flex-basis: 100%;
+}
+input {
+  padding: 10px 5px;
+  outline: none;
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.password-instructions p {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
